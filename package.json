@@ -1,0 +1,16 @@
+{
+  "name": "atom-finder",
+  "main": "./lib/main",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "keywords": [],
+  "activationCommands": {},
+  "repository": "https://github.com/atom/atom-finder",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
