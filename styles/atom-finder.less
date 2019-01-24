@@ -14,8 +14,13 @@
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: flex-start;
-    height: 100%;
+    height: auto;
+    max-height: 100%;
+    width: auto;
+    max-width: 100%;
     overflow-y: auto;
+    margin: 0 auto;
+    user-select: none;
 
     .icon {
       position: relative;
@@ -24,6 +29,7 @@
       align-items: flex-end;
       text-align: center;
       cursor: default;
+      border-radius: 4px;
 
       &::before {
         display: flex;
@@ -39,7 +45,10 @@
         pointer-events: none;
       }
 
-      &.cursor { background-color: rgba(255,255,255,0.25); }
+      &.cursor {
+        background-color: rgba(255,255,255,0.25);
+
+      }
     }
 
     .label {
@@ -56,5 +65,17 @@
       font-size: @label-font-size;
       pointer-events: none;
     }
+  }
+
+  .modal {
+    position: absolute;
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
   }
 }
