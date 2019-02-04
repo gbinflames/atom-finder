@@ -5,12 +5,16 @@
 @import "ui-variables";
 
 @label-font-size: 14px;
+@label-font-padding: 4px;
+@label-line-height: 1.25;
 @status-bar-height: 20px;
 @status-bar-padding: 8px;
+@cursor-color: rgba(255,255,255,0.25);
+@scroll-bar-width: 8px;
 
 .atom-finder {
 
-  &, * { box-sizing: border-box; }
+  // &, * { box-sizing: border-box; }
 
   .list-tree {
     display: flex;
@@ -20,10 +24,9 @@
     justify-content: flex-start;
     height: auto;
     max-height: ~"calc(100% - "(@status-bar-height + (@status-bar-padding * 2))~")";
-    width: auto;
-    max-width: 100%;
+    width: ~"calc(100% - "(@scroll-bar-width)~")";
     overflow-y: auto;
-    margin: 0 auto;
+    margin: 0 0 0 auto;
     user-select: none;
 
     .icon {
@@ -50,24 +53,29 @@
       }
 
       &.cursor {
-        background-color: rgba(255,255,255,0.25);
-
+        .label {
+          background-color: @cursor-color;
+          white-space: normal;
+          word-wrap: break-word;
+        }
       }
     }
 
     .label {
       position: absolute;
-      top: ~"calc(100% - "(@label-font-size)~")";
+      top: ~"calc(100% - "((@label-font-size * @label-line-height) + (@label-font-padding * 2))~")";
       display: inline-block;
-      width: 100%;
-      height: 1em;
+      width: auto;
+      max-width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
       text-align: center;
-      line-height: 1em;
+      line-height: @label-font-size * @label-line-height;
       font-size: @label-font-size;
       pointer-events: none;
+      padding: @label-font-padding;
+      border-radius: 4px;
     }
   }
 
@@ -87,27 +95,23 @@
     box-shadow: 0 -1px 0 0 rgba(255,255,255,0.05);
   }
 
-  .modal {
+  .af-scroll-bar {
     position: absolute;
-    display: none;
-    width: 100%;
-    max-width: 320px;
-    height: auto;
+    display: block;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    padding: 20px 20px;
-    background-color: rgba(0,0,0,0.8);
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    box-shadow: 0 16px 48px -12px rgba(0, 0, 0, 0.75);
-    border: 1px solid rgba(0,0,0,0.95);
+    left: 0;
+    width: @scroll-bar-width;
+    height: ~"calc(100% - "(@status-bar-height + (@status-bar-padding * 2))~")";
+    background-color: rgba(0,0,0,0.25);
   }
 
-  &.show-modal {
-    .modal {
-      display: block;
-    }
+  .af-scroll-handle {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: @scroll-bar-width;
+    background-color: rgba(0,0,0,0.25);
   }
 }
