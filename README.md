@@ -2,6 +2,8 @@
 
 An Atom file-browser similar to OSX's Finder app
 
+![Atom Finder](https://raw.githubusercontent.com/gbinflames/atom-finder/master/atom-finder.png)
+
 launch it by typing `finder new` in the command palette.
 
 <kbd>←</kbd>, <kbd>→</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>: move cursor
@@ -19,5 +21,3 @@ launch it by typing `finder new` in the command palette.
 <kbd>esc</kbd>: Cancels or Closes any open command palettes
 
 **more to come, stay tuned**
-
-![Atom Finder](https://raw.githubusercontent.com/gbinflames/atom-finder/master/atom-finder.png)
