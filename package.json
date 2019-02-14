@@ -1,9 +1,13 @@
 {
   "name": "atom-finder",
   "main": "./lib/main",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "An Atom file-browser similar to OSX's Finder app",
-  "keywords": ["file", "finder", "browser"],
+  "keywords": [
+    "file",
+    "finder",
+    "browser"
+  ],
   "activationCommands": {},
   "repository": "https://github.com/gbinflames/atom-finder.git",
   "license": "MIT",
